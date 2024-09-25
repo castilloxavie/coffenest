@@ -75,8 +75,15 @@ Run the development server:
 
 Access the project by navigating to http://127.0.0.1:8000 in your web browser.
 
-#### Project Structure
-**products:** Handles everything related to coffee products.
-**users:** Manages user authentication and profiles.
-**orders:** Manages customer orders.
+## Project Structure
+**products:** Handles everything related to coffee products.  
+**users:** Manages user authentication and profiles.  
+**orders:** Manages customer orders.  
 
+### Access Links in Local
+- [Iniciar sesión](http://127.0.0.1:8000/usuarios/login/)
+- [Registro de usuario](http://127.0.0.1:8000/usuarios/registro/)
+- [API de productos](http://127.0.0.1:8000/api/)
+- [Agregar producto](http://127.0.0.1:8000/agregar/)
+- [Mi orden](http://127.0.0.1:8000/ordenes/mi_orden/)
+- [Agregar producto a la orden](http://127.0.0.1:8000/ordenes/agregar_producto/)

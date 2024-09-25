@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>coffenest</title>
+    <title>Coffeenest</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+
+        main {
+            flex: 1; 
+        }
+    </style>
 </head>
-<body>
-    <div class="container mx-auto px-2">
 
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Coffeenest</h1>
+
+            <div class="inline-block">
+                <p class="text-lg font-semibold">
+                    Hola,
+                    {% if user.is_authenticated %}
+                        <span class="text-green-600">{{ user.username }}</span>
+                        <form action="{% url 'logout' %}" method="post" class="inline-block ml-4">
+                            {% csrf_token %}
+                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded-md transition duration-300">
+                                Cerrar sesión
+                            </button>
+                        </form>
+
+                        
+                        <!-- Botón de Pedido -->
+                        <a href="{% url 'my_order' %}" class="bg-blue-600 hover:bg-blue-500 text-white py-1 px-3 rounded-md transition duration-300 ml-4">
+                            Pedido
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="text-red-600 hover:text-red-800 underline">Login</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 mt-8">
+        <!-- Aquí se insertará el contenido de la página -->
         {% block content %}{% endblock content %}
+    </main>
 
-    </div>
-    
+    <footer class="bg-gray-800 text-white py-4 mt-16">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Coffeenest. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>

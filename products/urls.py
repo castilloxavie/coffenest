@@ -1,7 +1,8 @@
-from .views import ProductFormView, ProductListView
+from .views import ProducListAPI, ProductFormView, ProductListView
 from django.urls import path
 
 urlpatterns = [
-    path('producto/', ProductListView.as_view(), name='product_list'),
-    path('agregar/', ProductFormView.as_view(),  name='add_product'),
+    path("", ProductListView.as_view(), name="product_list"),
+    path("api/", ProducListAPI.as_view(), name="product_list_api"),
+    path("agregar/", ProductFormView.as_view(), name="add_product"),
 ]

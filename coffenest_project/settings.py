@@ -30,8 +30,11 @@ SECRET_KEY = "django-insecure-6n0ib8e7kfdk4t^5j%fjo!9)x0j@uqeih#g_2zhl6ohn1l&792
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "coffenest-production.eba-sfptqnj3.us-east-2.elasticbeanstalk.com"
+    "coffenest-production.eba-sfptqnj3.us-east-2.elasticbeanstalk.com",
+    "127.0.0.1",
+    "localhost"
 ]
+
 
 
 # Application definition
@@ -123,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT ="static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
